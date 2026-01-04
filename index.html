@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berra | Özel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+</head>
+<body>
+    <!-- Müzik Kontrol -->
+    <div class="music-player">
+        <button id="musicToggle">
+            <i class="fas fa-play" id="musicIcon"></i>
+            <span id="musicText">Müzik</span>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="https://assets.codepen.io/1468070/relaxing-piano.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Ana Ekran -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="title-container">
+                <h1 class="main-title">
+                    <span class="name-glow">Berra</span>'ya
+                </h1>
+                <div class="title-line"></div>
+                <p class="subtitle">Sadece bir sayfa değil, hissettiklerim</p>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary" id="startJourney">
+                    <i class="fas fa-heart"></i> Başlayalım
+                </button>
+                <button class="btn-secondary" id="playMusic">
+                    <i class="fas fa-music"></i> Müzikle Dinle
+                </button>
+            </div>
+        </div>
+        
+        <!-- Uçan Kalpler -->
+        <div class="hearts-container"></div>
+        
+        <!-- Scroll İndikatör -->
+        <div class="scroll-hint">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Özel Mesaj -->
+    <section class="message-section" id="message">
+        <div class="section-header">
+            <h2><i class="fas fa-envelope-open-text"></i> Sana Özel</h2>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="message-container">
+            <div class="paper-texture">
+                <div class="letter-content">
+                    <div class="letter-date">
+                        <i class="far fa-calendar"></i> Bugün
+                    </div>
+                    
+                    <p class="letter-opening">Sevgili Berra,</p>
+                    
+                    <div class="letter-body">
+                        <p>Bazen kelimeler yetmez. Bazen mesajlar, aramalar kifayetsiz kalır...</p>
+                        
+                        <p class="highlight-text">Bu yüzden buradayım. Bu satırları yazarken bile, senin için doğru sözcükleri bulmanın ne kadar önemli olduğunu bir kez daha anlıyorum.</p>
+                        
+                        <p>Belki bu sadece bir "özür" sitesi değil. Belki de gerçek hislerimi gösterebilmenin tek yoludur. Çünkü sen, <span class="emphasis">anlatılmaya değer</span> bir insansın.</p>
+                        
+                        <p>Ve biliyorum ki, yaptığım hatalar için özür dilemek yetmez. Zamanla, sabırla ve gerçek davranışlarımla güvenini yeniden kazanmak istiyorum.</p>
+                        
+                        <div class="quote-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Bazı insanlar diğerlerinden daha özeldir. Ve sen, o nadir insanlardansın.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="letter-closing">
+                        <p>Umarım bu küçük çaba, hissettiklerimi anlatmaya yetmiştir.</p>
+                        <div class="signature">
+                            <p>Saygı ve özlemle,</p>
+                            <h3 class="signature-name">[İsmin]</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hislerim -->
+        <div class="feelings-grid">
+            <div class="feeling-card" data-feeling="love">
+                <div class="feeling-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h4>Saygı</h4>
+                <p>Seni olduğun gibi kabul etmek</p>
+            </div>
+            
+            <div class="feeling-card" data-feeling="regret">
+                <div class="feeling-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h4>Özlem</h4>
+                <p>Konuşamadığımız zamanlar için</p>
+            </div>
+            
+            <div class="feeling-card" data-feeling="hope">
+                <div class="feeling-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Umut</h4>
+                <p>Yeniden güven kazanma umudu</p>
+            </div>
+            
+            <div class="feeling-card" data-feeling="care">
+                <div class="feeling-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Özen</h4>
+                <p>Değer verdiğim için</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anılar -->
+    <section class="memories-section" id="memories">
+        <div class="section-header">
+            <h2><i class="fas fa-memory"></i> Hatırlıyor Musun?</h2>
+            <div class="header-line"></div>
+            <p class="section-subtitle">Küçük anılar, büyük anlamlar</p>
+        </div>
+        
+        <div class="memories-slider">
+            <div class="memory-slide active">
+                <div class="memory-content">
+                    <div class="memory-number">01</div>
+                    <h3>İlk Konuşmamız</h3>
+                    <p>O ilk sohbetimizde ne kadar samimi olduğunu fark etmiştim. Her kelimen, her gülüşün özeldi.</p>
+                </div>
+            </div>
+            
+            <div class="memory-slide">
+                <div class="memory-content">
+                    <div class="memory-number">02</div>
+                    <h3>Gülüşün</h3>
+                    <p>Dünyayı aydınlatan o gülüş. En zor anımda bile onu düşünmek bana güç veriyor.</p>
+                </div>
+            </div>
+            
+            <div class="memory-slide">
+                <div class="memory-content">
+                    <div class="memory-number">03</div>
+                    <h3>Küçük Detaylar</h3>
+                    <p>Şakalaşmalarımız, paylaştığımız müzikler, o anlamsız mesajlaşmalarımız... Hepsi hazine.</p>
+                </div>
+            </div>
+            
+            <button class="slider-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- İletişim -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2><i class="fas fa-paper-plane"></i> Cevabın Benim İçin Önemli</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-message">
+                    <p>Bu siteyi sadece bir özür için değil, senin için emek verdiğimi göstermek için hazırladım.</p>
+                    <p class="highlight">Eğer okuduysan ve konuşmak istersen, ben buradayım.</p>
+                </div>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="method-info">
+                            <h4>WhatsApp</h4>
+                            <p>[TELEFON NUMARAN]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="method-info">
+                            <h4>Instagram</h4>
+                            <p>[@KULLANICI_ADIN]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="secret-message" id="secretMessage">
+                    <i class="fas fa-lock"></i>
+                    <p>Eğer buraya kadar okuduysan, senin için ne kadar ciddi olduğumu anlamışsındır 💫</p>
+                </div>
+                
+                <button class="secret-btn" id="revealSecret">
+                    <i class="fas fa-key"></i> Gizli Mesaj
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p class="footer-text">
+                Sadece <span class="footer-name">Berra</span> için hazırlandı
+            </p>
+            <p class="footer-date">2024 • Kalpten</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
